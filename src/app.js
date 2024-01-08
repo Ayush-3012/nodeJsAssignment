@@ -17,5 +17,10 @@ app.use(express.static("public"));
 
 app.get("/", (req, res) => res.json("Hello Welcome"));
 
+import userRouter from "./routes/users.routes.js";
+import adminRouter from "./routes/admin.routes.js";
+
+app.use("/api/v1/users", userRouter);
+app.use("/api/v1/admins", adminRouter);
 
 export default app;
